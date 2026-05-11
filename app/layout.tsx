@@ -24,10 +24,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${mono.variable}`}>
       <body className="font-sans">
         <TopBar />
-        <div className="flex min-h-screen pt-14">
+        <div className="layout-shell">
           <Sidebar />
-          <main className="flex-1 ml-0 md:ml-[260px] min-h-screen">
-            <div className="max-w-3xl mx-auto px-6 py-10">{children}</div>
+          <main className="main-content">
+            <div className="content-inner">{children}</div>
           </main>
         </div>
       </body>
