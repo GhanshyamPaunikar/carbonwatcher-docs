@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CarbonWatcher Docs
 
-## Getting Started
+Documentation site for [CarbonWatcher](https://github.com/GhanshyamPaunikar/carbonwatcher), a CLI and Python module that tracks the energy, carbon footprint, and cost of ML training runs and LLM API calls.
 
-First, run the development server:
+**Live site:** https://carbonwatcher-docs.vercel.app
+
+## Pages
+
+| Page | What it covers |
+|---|---|
+| [Getting started](https://carbonwatcher-docs.vercel.app/docs/getting-started) | Install, set your region, track your first experiment |
+| [CLI](https://carbonwatcher-docs.vercel.app/docs/cli) | `run`, `runs`, `compare`, `estimate` and the other commands |
+| [Python API](https://carbonwatcher-docs.vercel.app/docs/python-api) | `CarbonTracker`, `CostTracker`, `LLMTracker`, context manager and epoch APIs |
+| [LLM tracking](https://carbonwatcher-docs.vercel.app/docs/llm-tracking) | Drop-in wrappers for hosted and local LLM providers |
+| [Hardware](https://carbonwatcher-docs.vercel.app/docs/hardware) | Power measurement, PUE, DRAM estimation, Apple Silicon |
+| [Dashboard](https://carbonwatcher-docs.vercel.app/docs/dashboard) | Monthly dashboard and reduction goals |
+| [Team reports](https://carbonwatcher-docs.vercel.app/docs/team-reports) | Team stats from the CLI or Python, shared ledgers |
+
+## Run locally
+
+Requires Node.js 20 or newer.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project layout
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  page.tsx          Landing page
+  docs/<page>/      One folder per documentation page
+components/         Sidebar, top bar, and code blocks
+public/             Static assets
+```
 
-## Learn More
+## Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The site deploys to Vercel on every push to `main`.
